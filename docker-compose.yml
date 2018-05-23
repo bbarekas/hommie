@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  backend1:
+      build: .
+      tty: true
+
+  backend2:
+      build: .
+      tty: true
+
+  loadbalancer:
+      build: ./load-balancer
+      tty: true
+      links:
+          - backend1
+          - backend2
+      ports:
+          - '8080:8080'
