@@ -1,6 +1,5 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-//Define a schema
 var Schema = mongoose.Schema;
 
 // User schema
@@ -13,7 +12,7 @@ var userSchema = new Schema({
         type: Date, 
         default: Date.now 
     },
+    avatar: String
 });
 
-// Compile user model from schema
-var user = mongoose.model('user', userSchema );
+module.exports = mongoose.model('user', userSchema );
