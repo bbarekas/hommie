@@ -18,7 +18,7 @@ exports.user_list = function (req, res, next) {
 };
 
 // Display detail page for a specific Author.
-exports.author_detail = function (req, res, next) {
+exports.user_detail = function (req, res, next) {
 
     async.parallel({
         author: function (callback) {
@@ -43,12 +43,12 @@ exports.author_detail = function (req, res, next) {
 };
 
 // Display Author create form on GET.
-exports.author_create_get = function (req, res, next) {
+exports.user_create_get = function (req, res, next) {
     res.render('author_form', { title: 'Create Author' });
 };
 
 // Handle Author create on POST.
-exports.author_create_post = [
+exports.user_create_post = [
 
     // Validate fields.
     body('first_name').isLength({ min: 1 }).trim().withMessage('First name must be specified.')
@@ -96,7 +96,7 @@ exports.author_create_post = [
 ];
 
 
-
+/* 
 // Display Author delete form on GET.
 exports.author_delete_get = function (req, res, next) {
 
@@ -117,8 +117,9 @@ exports.author_delete_get = function (req, res, next) {
     });
 
 };
+ */
 
-// Handle Author delete on POST.
+/* // Handle Author delete on POST.
 exports.author_delete_post = function (req, res, next) {
 
     async.parallel({
@@ -147,9 +148,9 @@ exports.author_delete_post = function (req, res, next) {
         }
     });
 
-};
+}; */
 
-// Display Author update form on GET.
+/* // Display Author update form on GET.
 exports.author_update_get = function (req, res, next) {
 
     Author.findById(req.params.id, function (err, author) {
@@ -163,9 +164,9 @@ exports.author_update_get = function (req, res, next) {
         res.render('author_form', { title: 'Update Author', author: author });
 
     });
-};
+}; */
 
-// Handle Author update on POST.
+/* // Handle Author update on POST.
 exports.author_update_post = [
 
     // Validate fields.
@@ -213,4 +214,4 @@ exports.author_update_post = [
             });
         }
     }
-];
+]; */
