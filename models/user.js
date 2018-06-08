@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 // User schema
 var userSchema = new Schema({
-    username: String,
-    password: String,
+    first_name: String,
+    family_name: String,
     email: String,
     birthday: Date,
     updated: { 
@@ -15,4 +15,11 @@ var userSchema = new Schema({
     avatar: String
 });
 
-module.exports = mongoose.model('user', userSchema );
+// Virtual for this user instance URL.
+userSchema
+.virtual('url')
+.get(function () {
+  return '/users/' + this._id;
+});
+
+module.exports = mongoose.model('User', userSchema );

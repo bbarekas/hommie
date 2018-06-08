@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 User: #{user.first_name} #{user.family_name}
+  p #{user.lifespan}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Books
+    
+    //dl
+    //each book in author_books
+    //  dt 
+    //    a(href=book.url) #{book.title}
+    //  dd #{book.summary}
+
+    //else
+      p This User has no books.
+      
+  hr
+  p
+    a(href=user.url+'/delete') Delete user
+  p
+    a(href=user.url+'/update') Update user
