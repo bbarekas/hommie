@@ -77,12 +77,13 @@ exports.user_create_post = [
                 first_name: req.body.first_name,
                 family_name: req.body.family_name,
                 birthday: req.body.date_of_birth,
-                //date_of_death: req.body.date_of_death
             });
             user.save(function (err) {
                 if (err) { return next(err); }
                 // Successful - redirect to new user record.
-                res.redirect(user.url);
+                if (req.headers['referer']) {
+                    res.redirect(user.url);
+                }
             });
         }
     }
