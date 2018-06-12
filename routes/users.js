@@ -31,10 +31,12 @@ router.get('/:id/update', user.user_update_get);
 router.post('/:id/update', user.user_update_post);
  */
 
+// GET request for list of all user.
+router.get('/list', user.user_list);
+
 // GET request for one user.
 router.get('/:id', user.user_detail);
 
-// GET request for list of all user.
-router.get('/list', user.user_list);
+
 
 module.exports = router;

@@ -6,8 +6,8 @@ const { sanitizeBody } = require('express-validator/filter');
 
 // Display list of all users.
 exports.user_list = function (req, res, next) {
-  //
-  user.find()
+
+  User.find()
     .sort([['family_name', 'ascending']])
     .exec(function (err, list_users) {
       if (err) { return next(err); }
