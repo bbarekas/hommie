@@ -37,6 +37,4 @@ router.get('/list', user.user_list);
 // GET request for one user.
 router.get('/:id', user.user_detail);
 
-
-
 module.exports = router;
